@@ -1,0 +1,32 @@
+@use 'styles/mixins' as *;
+
+.iconButtonRoot {
+    padding: 13px;
+    margin-left: 12px;
+    width: max-content;
+}
+
+
+
+.iconButton {
+    background-color: #FF5555;
+    display: inline-flex;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+
+
+.iconButton:hover {
+    background-color: #FF5555;
+    opacity: 70%;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+
+
+.iconButton:disabled {
+    cursor: default;
+    opacity: 70%;
+    background-color: #D9D9D9;
+}

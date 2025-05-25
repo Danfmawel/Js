@@ -1,0 +1,47 @@
+@use 'styles/mixins' as *;
+
+.checkboxRoot {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox {
+    min-width: 20px;
+    min-height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    transition: all 0.2s;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox:focus {
+    border-color: #FF5555;
+}
+
+
+.checkbox:checked {
+    border-color: #D9D9D9;
+    background-color: #FFFFFF;
+}
+
+
+.checkbox:checked::before {
+    border: solid #FF5555;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    position: absolute;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    content: "";
+}
+
+
+
+.checkbox:disabled {
+    opacity: 70%;
+}

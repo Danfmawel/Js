@@ -1,0 +1,152 @@
+.repoPage {
+    padding: 12px 0;
+    width: 357px;
+    margin: 0 auto;
+    font-family: Roboto;
+    color: #000000;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 20px;
+        margin: 24px 0 0 0;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 21px;
+
+    h1 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+    }
+}
+
+.backIcon {
+    width: 11px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.avatarRepo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 8px 0 32px;
+}
+
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    span {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.monthLabels {
+    display: grid;
+    grid-template-columns: repeat(30, 12px); // 8px square + 4px gap
+    font-size: 12px;
+    font-weight: 400px;
+    margin-top: 8px;
+}
+
+.monthLabel {
+    font-size: 12px;
+    text-align: left;
+}
+
+
+.dayRow {
+    display: grid;
+    grid-template-columns: repeat(30, 0fr);
+    grid-auto-rows: 12px;
+    gap: 4px;
+}
+
+.activityDay {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background-color: #CBCBCB;
+}
+
+.activityDay.level0 {
+    background-color: #CBCBCB;
+}
+
+.activityDay.level1 {
+    background-color: #63FFD3;
+}
+
+.activityDay.level2 {
+    background-color: #00C78F;
+}
+
+.activityDay.level3 {
+    background-color: #007251;
+}
+
+.avatarLarge {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+
+
+.contributors {
+    display: grid;
+    grid-template-columns: repeat(11, 24px);
+    column-gap: 8px;
+    row-gap: 8px;
+    width: 357px;
+    box-sizing: border-box;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+.branchList li {
+    padding: 8px 0;
+}
+
+.branchProtected {
+    color: #BEBEBE;
+    font-weight: 400;
+}

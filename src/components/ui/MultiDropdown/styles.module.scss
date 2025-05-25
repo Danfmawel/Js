@@ -1,0 +1,102 @@
+@use 'styles/mixins' as *;
+
+
+.multiDropdownRoot {
+    width: 180px;
+
+    position: relative;
+
+
+}
+
+.multiDropdown {
+    background-color: #fff;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    margin-top: 5px;
+
+}
+
+.multiDropdown button {
+    background-color: #FFFFFF;
+    border-top: 1px solid #eee;
+    width: 180px;
+    text-align: start;
+
+    border: none;
+    font-size: 14px;
+    padding: 17px 12px;
+}
+
+
+
+.multiDropdown button:first-child {
+    border-top: none;
+}
+
+
+.multiDropdown button:hover {
+    background-color: #F1F1F1;
+
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.multiDropdown .selected {
+    background-color: #F1F1F1;
+}
+
+.multiDropdownS {
+    color: #7E7E7E;
+    border: 1px solid #D9D9D9;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    width: 180px;
+    height: 50px;
+    padding: 17px 40px 17px 12px;
+    text-align: start;
+    position: relative;
+
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+
+}
+
+.multiDropdownS::after {
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-image: url('/src/assets/icons/common/arrow.svg');
+
+    position: absolute;
+    top: 50%;
+    right: 15px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+    transform: translateY(-50%) rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+[data-open="true"].multiDropdownS::after {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.multiDropdownS:focus {
+    border: 1px solid #FF5555;
+    outline: none;
+}
+
+.multiDropdownS:disabled {
+    border: 1px solid #FF5555;
+}

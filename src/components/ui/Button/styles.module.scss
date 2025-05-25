@@ -1,0 +1,39 @@
+@use 'styles/mixins' as *;
+
+.buttonRoot {
+    width: max-content;
+    padding: 13px 52px;
+}
+
+.button {
+    color: #FFFFFF;
+    background-color: #FF5555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.button p {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.button:hover {
+    background-color: #FF5555;
+    opacity: 70%;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.button:disabled {
+    background-color: #D9D9D9;
+    cursor: default;
+    opacity: 70%;
+}
+
+.loading {
+    background-color: #FF5555;
+    cursor: default;
+    opacity: 70%;
+}

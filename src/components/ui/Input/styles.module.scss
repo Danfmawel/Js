@@ -1,0 +1,28 @@
+@use 'styles/mixins' as *;
+
+.inputRoot {
+    width: 295px;
+    padding: 17px 12px;
+}
+
+
+.input {
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #D9D9D9;
+
+}
+
+
+
+.input:focus {
+    outline: none;
+    border: 1px solid #FF5555;
+
+}
+
+
+
+.input:disabled {
+    background-color: #F9F9F9;
+}

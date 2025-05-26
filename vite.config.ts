@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
 import svgr from 'vite-plugin-svgr'
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
   optimizeDeps: {
     include: ['react/jsx-runtime']
@@ -10,7 +10,14 @@ export default defineConfig({
   plugins: [svgr(), react()],
   server: {
     host: true,
-    port: 5173
+    port: 5173,
+    proxy: {
+      '/api/github': {
+        target: 'https://api.github.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/github/, '')
+      }
+    }
   },
   resolve: {
     alias: [

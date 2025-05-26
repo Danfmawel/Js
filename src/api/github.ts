@@ -1,17 +1,24 @@
-const GITHUB_API = 'https://api.github.com';
+const GITHUB_API = '/api/github';
 
-const headers = {
+const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
+const headers: HeadersInit = {
+    Authorization: `Bearer ${TOKEN}`,
     Accept: 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28',
 };
 
+const MAX_PAGES = 3;
+
 export const fetchReposByOrg = async (org: string) => {
+
+
     let page = 1;
     const allRepos = [];
 
-    while (true) {
-        const res = await fetch(`${GITHUB_API}/orgs/${org}/repos?per_page=100&page=${page}&sort=updated`, { headers });
-        if (!res.ok) throw new Error('Failed to fetch repos');
+    while (page <= MAX_PAGES) {
+        const res = await fetch(`${GITHUB_API}/orgs/${org}/repos?per_page=30&page=${page}`, { headers });
+
+        if (!res.ok) throw new Error(`Failed to fetch repos (page ${page})`);
         const repos = await res.json();
         if (repos.length === 0) break;
 
@@ -35,7 +42,6 @@ export const fetchRepoCommitActivity = async (owner: string, repo: string) => {
     return res.json();
 };
 
-
 export const fetchRepoContributors = async (owner: string, repo: string) => {
     const res = await fetch(`${GITHUB_API}/repos/${owner}/${repo}/contributors`, { headers });
     if (!res.ok) throw new Error('Failed to fetch contributors');
@@ -47,4 +53,3 @@ export const fetchRepoBranches = async (owner: string, repo: string) => {
     if (!res.ok) throw new Error('Failed to fetch branches');
     return res.json();
 };
-

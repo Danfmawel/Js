@@ -6,7 +6,12 @@ const headers: HeadersInit = {
     Accept: 'application/vnd.github+json',
     'X-GitHub-Api-Version': '2022-11-28',
 };
-
+/*
+const headers: HeadersInit = {
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+};
+*/
 const MAX_PAGES = 3;
 
 export const fetchReposByOrg = async (org: string) => {
